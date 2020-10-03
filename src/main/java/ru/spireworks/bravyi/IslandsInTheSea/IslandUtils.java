@@ -12,8 +12,8 @@ import java.util.List;
 
 @Getter
 @Setter
-public class IslandTools {
-    private static final Logger LOGGER = Logger.getLogger(IslandTools.class);
+public class IslandUtils {
+    private static final Logger LOGGER = Logger.getLogger(IslandUtils.class);
 
     private static final String IS_NOT_NUMBER_ERROR = "Строка, %s не является числом. Построение  карты невозможно!";
     private static final String ZERO = "0";
@@ -44,7 +44,7 @@ public class IslandTools {
         for (String line : coords) {
             if (StringUtils.isEmpty(line)) continue;
             line = StringUtils.deleteWhitespace(line);
-            if(!isDigits(line)) {
+            if(!NumberUtils.isDigits(line)) {
                 LOGGER.error(String.format(IS_NOT_NUMBER_ERROR, line));
                 return null;
             }
@@ -68,10 +68,5 @@ public class IslandTools {
     // Проверка, что строка не пустая и заканчивается 0
     private boolean checkEndOfLineForZero(String line) {
         return StringUtils.isNotEmpty(line) && line.endsWith(ZERO);
-    }
-
-    // Проверка является ли строка числом
-    private boolean isDigits(String line) {
-        return NumberUtils.isDigits(line);
     }
 }
