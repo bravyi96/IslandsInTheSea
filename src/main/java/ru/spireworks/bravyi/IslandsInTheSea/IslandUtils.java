@@ -6,7 +6,10 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.apache.log4j.Logger;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -50,10 +53,19 @@ public class IslandUtils {
             }
 
             if (checkEndOfLineForZero(line)) {
+                char[] tempCoords = line.toCharArray();
+                int[] islandCoords = new int[island.getSize()];
+
+                for (int i = 0; i < island.getSize(); i++) {
+                    if (i < tempCoords.length)
+                        islandCoords[i] = Character.getNumericValue(tempCoords[i]);
+                    else islandCoords[i] = 0;
+                }
+
                 if (island.getHCoords().size() < island.getSize()) {
-                    island.getHCoords().add(line);
+                    island.getHCoords().add(islandCoords);
                 } else if (island.getVCoords().size() < island.getSize()) {
-                    island.getVCoords().add(line);
+                    island.getVCoords().add(islandCoords);
                 }
             } else {
                 if (island.getSize() != 0) islands.add(island);

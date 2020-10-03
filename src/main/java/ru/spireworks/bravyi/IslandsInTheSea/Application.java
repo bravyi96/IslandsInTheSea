@@ -4,7 +4,6 @@ import lombok.Getter;
 import lombok.Setter;
 import org.apache.log4j.Logger;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -19,21 +18,15 @@ public class Application {
         List<Island> islands = islandUtils.getAllIslands(data);
 
         for (Island island : islands) {
-            List<String> map = new ArrayList<>();
-            logging(island);
-
-            for (int i = 0; i < island.getSize(); i++) {
-                for (int j = 0 ; j < island.getSize(); j++) {
-
-                }
-            }
+            System.out.println(island.toString());
+//            List<String> map = new ArrayList<>();
+//
+//            for (int i = 0; i < island.getSize(); i++) {
+//                for (int j = 0 ; j < island.getSize(); j++) {
+//
+//                }
+//            }
         }
-    }
-
-    private void logging(Island island) {
-        log.info("Размер острова: " + island.getSize());
-        log.info("Координаты по горизонтали: " + island.getHCoords());
-        log.info("Координаты по вертикали: " + island.getVCoords() + "\n");
     }
 
     public static void main( String[] args ) {
