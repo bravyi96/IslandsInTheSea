@@ -2,6 +2,6 @@
 ## Методика решения задач по информатике (Международные олимпиады). В.М.Кирюхин, С.М.Окулов
 ### Четвертая международная олимпиада. Задача первого тура: "Острова в море"
 
-Скрины для карт размеров 6х6 и 4х4
-https://cloud.mail.ru/public/yaQV/3D1u2HgfT
-https://cloud.mail.ru/public/E8yd/4Z9Egaur4
+###### Скрины для карт размеров 6х6 и 4х4
+###### https://cloud.mail.ru/public/yaQV/3D1u2HgfT
+###### https://cloud.mail.ru/public/E8yd/4Z9Egaur4
